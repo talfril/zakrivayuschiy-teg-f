@@ -24,12 +24,12 @@
   background-image: var(--bg-image);
   background-position: cover;
   background-repeat: no-repeat;
+  font-variation-settings: "wght" var(--main-font-weight);
 }
 
 @supports (font-variation-settings: normal) {
   .page {
     font-family: var(--main-font), sans-serif;
-    font-variation-settings: "wght" var(--main-font-weight);
   }
 }
 
@@ -140,11 +140,18 @@
 }
 
 .content-title {
+  font-family: "Inter", sans-serif;
   font-variation-settings: "wgth" var(--title-font-weight);
   color: var(--main-theme-color);
   font-size: 18px;
   align-self: start;
   padding: 5px 10px;
+}
+
+@supports (font-variation-settings: normal) {
+  .content-title {
+    font-family: var(--main-font), sans-serif;
+  }
 }
 
 .image-with-description {
@@ -339,8 +346,6 @@
   inset-inline: 0;
   inset-block-start: 50%;
   transform: translateY(-50%);
-
-
 }
 
 .in-dialog {
