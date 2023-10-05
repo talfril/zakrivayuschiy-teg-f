@@ -2,7 +2,7 @@
 :root {
   --content-bg-color: #ffffff;
   --main-theme-color: #000;
-  --main-font: "Inter-Variable", sans-serif;
+  --main-font: "Inter", sans-serif;
   --accent-font: "PressStart2P-Regular", sans-serif;
   --main-font-weight: 400;
   --title-font-weight: 700;
