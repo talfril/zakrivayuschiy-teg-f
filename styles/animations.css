@@ -14,70 +14,70 @@
 */
 
 @keyframes reducing-opacity-menu-buttons {
-    from {
-        opacity: 1;
-    }
-  
-    to {
-        opacity: 0.6;
-    }
+  from {
+    opacity: 1;
   }
 
-  @keyframes focus-underlining {
-    from {
-        transform: scaleX(0);
-    }
+  to {
+    opacity: 0.6;
+  }
+}
 
-    to {
-        transform: scaleX(1);
-    }
+@keyframes focus-underlining {
+  from {
+    transform: scaleX(0);
   }
 
-  @keyframes jumping-arrow{
-    from {
-        transform: translateX(0)
-    }
+  to {
+    transform: scaleX(1);
+  }
+}
 
-    to {
-        transform: translateX(4px)
-    }
+@keyframes jumping-arrow {
+  from {
+    transform: translateX(0);
   }
 
-  @keyframes focus-shadow {
-    from {
-        box-shadow: none;
-    }
+  to {
+    transform: translateX(4px);
+  }
+}
 
-    to {
-        box-shadow: 4px 4px 0 0 var(--main-theme-color);
-    }
+@keyframes focus-shadow {
+  from {
+    box-shadow: none;
   }
 
-  @keyframes focus-border {
-    from {
-        border: 2px solid transparent;
-    }
+  to {
+    box-shadow: 4px 4px 0 0 var(--main-theme-color);
+  }
+}
 
-    to {
-        border: 2px solid var(--main-theme-color);
-    }
+@keyframes focus-border {
+  from {
+    border: 2px solid transparent;
   }
 
-  @keyframes sparks-active {
-    from {
-        fill: var(--content-bg-color);
-    }
-    to {
-        fill: red;
-    }
+  to {
+    border: 2px solid var(--main-theme-color);
+  }
+}
+
+@keyframes sparks-active {
+  from {
+    fill: var(--content-bg-color);
+  }
+  to {
+    fill: red;
+  }
+}
+
+@keyframes heart-size-change {
+  from {
+    transform: scale(1);
   }
 
-  @keyframes heart-size-change {
-    from {
-transform: scale(1);
-    }
-
-    to {
-transform: scale(1.1);
-    }
+  to {
+    transform: scale(1.1);
   }
+}
