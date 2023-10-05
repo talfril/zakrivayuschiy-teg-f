@@ -391,6 +391,10 @@
   font-size: 14px;
 }
 
+.ok-button:focus {
+  outline: none;
+}
+
 .dialog-window::backdrop {
   background-color: rgb(0 0 0 / 0.75);
 }
