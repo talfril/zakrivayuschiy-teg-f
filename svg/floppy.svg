@@ -1,9 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="save-icon">
-  <symbol id="save-icon" 
-    fill="var(--button-text-color)"
-    stroke="var(--button-text-color)"
-    class="save-icon" 
-  >
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="save-icon"
+  class="save-icon"
+  fill="var(--button-text-color)"  >
 <g>
 <path d="M0 0h1.615v1.615H0zM0 1.615h1.615V3.23H0zM0 3.231h1.615v1.615H0zM0 4.846h1.615v1.615H0zM0 
 6.461h1.615v1.615H0zM0 8.077h1.615v1.615H0zM0 9.692h1.615v1.615H0zM0 11.308h1.615v1.615H0zM0 
