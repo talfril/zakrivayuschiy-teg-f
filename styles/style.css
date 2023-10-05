@@ -17,4 +17,435 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  background-color: var(--content-bg-color);
+  display: grid;
+  justify-content: center;
+  font-family: var(--main-font);
+  font-variation-settings: var(--main-font-weight);
+  background-image: var(--bg-image);
+  background-position: cover;
+  background-repeat: no-repeat;
+}
+
+.content {
+  inline-size: clamp(23.1875rem, 16.0352rem + 30.5164vw, 43.5rem);
+  background-color: var(--content-bg-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-block-end: 52px;
+  border: 2px solid var(--main-theme-color);
+}
+
+.header {
+  font-family: var(--accent-font);
+  color: var(--main-theme-color);
+  padding-block-start: clamp(7.5rem, 7.1479rem + 1.5023vw, 8.5rem);
+  margin-block-start: 100px;
+  margin-block-end: 100px;
+}
+
+.logo {
+  text-transform: uppercase;
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  padding-block-end: 20px;
+}
+
+.title {
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  text-transform: uppercase;
+}
+
+.theme-menu__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-block-start: 25px;
+  padding-block-end: 25px;
+  padding-inline-start: 17px;
+}
+
+.theme-menu__button {
+  border: none;
+  font-size: 14px;
+  color: var(--main-theme-color);
+  text-transform: uppercase;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+}
+
+.theme-menu__button:disabled {
+  pointer-events: none;
+  opacity: 0.6;
+  animation: reducing-opacity-menu-buttons 0.3s ease forwards;
+  position: relative;
+}
+
+.theme-menu__button:hover {
+  animation: reducing-opacity-menu-buttons 0.3s ease forwards;
+}
+
+.theme-menu__button:focus {
+  outline: none;
+  animation: reducing-opacity-menu-buttons 0.3s ease forwards;
+}
+
+.theme-menu__button:focus-visible::after {
+  content: "";
+  background-color: var(--main-theme-color);
+  opacity: 0.6;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  inset-inline-end: 0; 
+  inset-block-end: -2px;
+  animation: focus-underlining 0.3s ease forwards;
+  transform-origin: 0 0;
+}
+
+
+.theme-menu__button:disabled::before {
+  content: "▶";
+  position: absolute;
+  inset-inline-start: -13px;
+  animation: jumping-arrow ease-in-out 0.5s infinite alternate;
+}
+
+.image-text {
+  font-family: var(--accent-font);
+  font-size: 14px;
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+  color: var(--main-theme-color);
+  position: absolute;
+  inset-inline-end: 25px;
+  inset-block-start: 25px;
+  text-shadow:
+    -1px 0 (--content-bg-color), 
+   0 1px (--content-bg-color), 
+   1px 0 (--content-bg-color), 
+   0 -1px (--content-bg-color);
+}
+
+@supports((text-stroke: 1px #000000) or (-webkit-text-stroke: 1px #000000)) {
+  .image-text {
+        -webkit-text-stroke: 1px var(--content-bg-color);
+        text-stroke: 1px var(--content-bg-color);
+        text-shadow: none;
+    }
+} 
+
+
+.content-title {
+  font-variation-settings: var(--title-font-weight);
+  color: var(--main-theme-color);
+  font-size: 18px;
+  align-self: start;
+  padding: 5px 10px;
+}
+
+.image-with-description {
+  position: relative;
+}
+
+.content-image {
+  inline-size: 100%;
+  border: 2px solid var(--main-theme-color);
+  object-fit: cover;
+  object-position: center right;
+  aspect-ratio: 1 / 1;
+}
+
+
+.content-description {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  padding: 28px 26px 25px 23px;
+  
+}
+
+.content-text {
+  color: var(--main-theme-color);
+  font-family: var(--main-font);
+  font-size: 19px;
+  font-weight: var(  --main-font-weight);
+  line-height: 21px;
+}
+
+.like-icon {
+  fill: var(--main-theme-color);
+  cursor: pointer;
+}
+
+.like-icon .core  {
+  fill: var(--core-heart-color);
+  transition: all 0.3s ease-in-out;
+}
+
+.like-icon .main-body {
+  fill: var(--main-body-heart-color);
+  transition: all 0.4s ease-in-out;
+}
+
+
+.like-icon:hover .core  {
+  fill: var(--main-theme-color);
+}
+
+.like-icon:hover .main-body {
+  fill: var(--main-theme-color);
+}
+
+.like-icon:active .core  {
+  fill: red;
+}
+
+.like-icon:active .main-body {
+  fill: red;
+}
+
+.like-icon.is-liked .core {
+  fill: red;
+  transition: all 0.3s ease-in-out;
+}
+
+.like-icon.is-liked .main-body {
+  fill: red;
+  transition: all 0.3s ease-in-out 0.06s;
+}
+
+.like-icon.is-liked .contour {
+  fill: red;
+  transition: all 0.3s ease-in-out 0.06s;
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks-active 0.3s 0.3s ease-in;
+}
+
+.like-icon.is-liked .heart{
+  animation: heart-size-change ease-in 0.6s 0.1s;
+}
+
+
+
+
+.like-button-box {
+  align-self: end;
+  display: flex;
+  gap: 8px;
+  justify-items: end;
+  align-items: end;
+  margin-block-end: 25px;
+  margin-inline-end: 25px;
+}
+
+.button {
+  font-family: var(--accent-font);
+  background-color: transparent;
+  border: none;
+  position: relative;
+  cursor: pointer;
+}
+
+.button:focus {
+  box-shadow: 4px 4px 0 0 var(--main-theme-color);
+  animation: focus-shadow 0.3s ease forwards;
+}  
+
+.card__icon-button {
+  background-color: var(--content-bg-color);
+  position: relative;
+  border: none;
+  height: 36px;
+}
+
+.card__icon-button:focus{
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  animation: focus-border 0.3s ease forwards;
+}
+
+.button::after {
+  content: "";
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  background-color: var(--main-theme-color);
+  position: absolute;
+  inset-inline-start: -1px;
+  transition: all 0.5s ease-in-out;
+  transform-origin: 0 0;
+  transform: scaleX(0);
+}
+
+.button:hover::after {
+  transform: scaleX(1);
+}
+
+.card__icon-button .button__text  {
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+.button__text {
+  mix-blend-mode: difference;
+  color: var(--button-text-color);
+  font-family: var(--accent-font);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: var( --main-font-weight);
+  line-height: 90%;
+  position: relative;
+  z-index: 1;
+}
+
+.card__like-button {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  outline: 2px solid var(--main-theme-color);
+  padding: 10px 33px;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  margin-block-end: 105px;
+}
+
+.save-button {
+  display: flex;
+  gap: 8px;
+  background-color: var(--content-bg-color);
+  padding: 16px 20px;
+  outline: 2px solid var(--main-theme-color);
+  align-content: center;
+  align-items: center;
+  position: relative;
+}
+
+
+.save-icon {
+  mix-blend-mode: difference;
+  z-index: 1000;
+}
+
+.dialog-window:opened {
+  padding: 0;
+  position: fixed;
+  margin-inline: auto;
+  display: flex;
+  inset-inline: 0;
+  inset-block-start: 50%;
+  transform: translateY(-50%);
+  border: 2px solid var(--main-theme-color);
+}
+
+.in-dialog {
+  max-width: min-content;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin: 30px;
+  padding: 0;
+}
+
+.dialog-content {
+  display: flex;
+  gap: 20px;
+}
+
+.dialog-icon {
+  inline-size: 89px;
+}
+
+.dialog-text {
+  color: var(--main-theme-color);
+  font-family: var(--accent-font);
+  font-size: 14px;
+  font-weight: var(--main-font-weight);
+  line-height: 150%; 
+  text-transform: uppercase;
+  margin-inline-end: 15px;
+}
+
+.ok-button {
+  text-transform: uppercase;
+  border: 2px solid var(--main-theme-color);
+  padding: 9px 130px; 
+  font-family: var(--accent-font);
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.dialog-window::backdrop {
+  background-color: rgb(0 0 0 / 0.75);
+} 
+
+.filter-dream-effect {
+  filter: contrast(70%) sepia(0.2);
+}
+
+.filter-dark {
+  filter: brightness(40%);
+}
+
+.filter-invert {
+  filter: invert(90%);
+}
+
+.filter-saturation {
+  filter:saturate(210%);
+}
+
+.filter-blur {
+  filter: blur(7px);
+}
+
+.filter-more-bright {
+  filter: brightness(120%);
+}
+
+.filter-grey {
+  filter: grayscale(40%)
+}
+
+.filter {
+  filter: contrast(150%) saturate(90%) hue-rotate(-0.2turn);
+}
+
+
+@media (width <= 376px) {
+  .content-text {
+    font-size: 19px;
+  }
+
+  .image-text {
+    inset-inline-end: 11px;
+  }
+
+  .content-description {
+    padding: 28px 29px 25px 25px;
+    
+  }
+
+  .save-button {
+    flex-direction: column;
+    padding: 22px 22px 14px 22px;
+  }
+
+  .dialog-text {
+    margin-inline-end: 0;
+  }
+
+  .ok-button {
+    padding: 9px 115px; 
+  }
 }
