@@ -25,6 +25,7 @@
   background-position: cover;
   background-repeat: no-repeat;
   font-variation-settings: "wght" var(--main-font-weight);
+  background-attachment: fixed;
 }
 
 @supports (font-variation-settings: normal) {
@@ -56,6 +57,11 @@
   text-transform: uppercase;
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   padding-block-end: 20px;
+  text-decoration: none;
+}
+
+.logo:focus {
+  outline: none;
 }
 
 .title {
@@ -115,6 +121,7 @@
   content: "▶";
   position: absolute;
   inset-inline-start: -13px;
+  inset-block-start: 0;
   animation: jumping-arrow ease-in-out 0.5s infinite alternate;
 }
 
@@ -127,8 +134,9 @@
   position: absolute;
   inset-inline-end: 25px;
   inset-block-start: 25px;
-  text-shadow: -1px 0 (--content-bg-color), 0 1px (--content-bg-color),
-    1px 0 (--content-bg-color), 0 -1px (--content-bg-color);
+  z-index: 1;
+  text-shadow: -1px 0 var(--content-bg-color), 0 1px var(--content-bg-color),
+    1px 0 var(--content-bg-color), 0 -1px var(--content-bg-color);
 }
 
 @supports ((text-stroke: 1px #000000) or (-webkit-text-stroke: 1px #000000)) {
@@ -261,12 +269,16 @@
 .card__icon-button {
   background-color: var(--content-bg-color);
   position: relative;
+  inset-block-start: 2px;
+  inset-inline-start: 0;
   border: none;
   height: 36px;
+  width: 39px;
 }
 
 .card__icon-button:focus {
   outline: none;
+  border: 2px solid transparent;
 }
 
 .card__icon-button:focus-visible {
@@ -316,7 +328,7 @@
   padding: 10px 33px;
 }
 
-.footer {
+.save-block {
   display: flex;
   justify-content: center;
   margin-block-end: 105px;
