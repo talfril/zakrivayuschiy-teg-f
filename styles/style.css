@@ -35,7 +35,7 @@
 }
 
 .content {
-  inline-size: clamp(23.1875rem, 15.375rem + 31.25vw, 43.5rem);;
+  inline-size: clamp(23.1875rem, 15.375rem + 31.25vw, 43.5rem);
   background-color: var(--content-bg-color);
   display: flex;
   flex-direction: column;
@@ -277,7 +277,6 @@
   outline: 2px solid var(--main-theme-color);
 }
 
-
 .card__icon-button {
   background-color: var(--content-bg-color);
   position: relative;
@@ -290,7 +289,6 @@
 
 .card__icon-button:focus {
   outline: none;
-
 }
 
 .card__icon-button:focus-visible {
@@ -464,10 +462,9 @@
 }
 
 @media (width <= 400px) {
-
-.content {
-  width: 100%;
-}
+  .content {
+    width: 100%;
+  }
 
   .content-text {
     font-size: 19px;
