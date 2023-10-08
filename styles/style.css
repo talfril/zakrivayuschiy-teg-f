@@ -493,4 +493,9 @@
   .ok-button {
     padding: 9px 115px;
   }
+
+  .save-icon {
+    max-width: 28px;
+    max-height: 28px;
+  }
 }
