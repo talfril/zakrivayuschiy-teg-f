@@ -35,7 +35,7 @@
 }
 
 .content {
-  inline-size: clamp(23.1875rem, 16.0352rem + 30.5164vw, 43.5rem);
+  inline-size: clamp(23.1875rem, 15.375rem + 31.25vw, 43.5rem);;
   background-color: var(--content-bg-color);
   display: flex;
   flex-direction: column;
@@ -167,7 +167,7 @@
 }
 
 .content-image {
-  inline-size: 100%;
+  max-width: 100%;
   border: 2px solid var(--main-theme-color);
   object-fit: cover;
   object-position: center right;
@@ -192,6 +192,11 @@
 .like-icon {
   fill: var(--main-theme-color);
   cursor: pointer;
+  width: 27px;
+  height: 24px;
+  overflow: visible;
+  position: absolute;
+  inset: 0 0;
 }
 
 .like-icon .core {
@@ -259,12 +264,19 @@
   border: none;
   position: relative;
   cursor: pointer;
+  outline: 2px solid var(--main-theme-color);
 }
 
-.button:focus {
+.button:focus-visible {
   box-shadow: 4px 4px 0 0 var(--main-theme-color);
   animation: focus-shadow 0.3s ease forwards;
+  outline: 2px solid var(--main-theme-color);
 }
+
+.button:active {
+  outline: 2px solid var(--main-theme-color);
+}
+
 
 .card__icon-button {
   background-color: var(--content-bg-color);
@@ -278,21 +290,22 @@
 
 .card__icon-button:focus {
   outline: none;
-  border: 2px solid transparent;
+
 }
 
 .card__icon-button:focus-visible {
   animation: focus-border 0.3s ease forwards;
+  border: 2px solid transparent;
 }
 
 .button::after {
   content: "";
-  width: calc(100% + 2px);
-  height: calc(100% + 2px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
   background-color: var(--main-theme-color);
   position: absolute;
-  inset-inline-start: -1px;
-  inset-block-end: 0;
+  inset-inline-start: -2px;
+  inset-block-end: -2px;
   transition: transform 0.5s ease-in-out;
   transform-origin: 0 0;
   transform: scaleX(0);
@@ -324,12 +337,11 @@
   display: flex;
   gap: 12px;
   align-items: center;
-  outline: 2px solid var(--main-theme-color);
-  padding: 10px 33px;
+  padding: 10px 35px;
 }
 
 .save-block {
-  display: flex;
+  display: grid;
   justify-content: center;
   margin-block-end: 105px;
 }
@@ -339,15 +351,19 @@
   gap: 8px;
   background-color: var(--content-bg-color);
   padding: 16px 20px;
-  outline: 2px solid var(--main-theme-color);
   align-content: center;
   align-items: center;
   position: relative;
 }
 
 .save-icon {
+  overflow: visible;
+  width: 100%;
+  fill: var(--button-text-color);
   mix-blend-mode: difference;
-  z-index: 1000;
+  max-width: 21px;
+  max-height: 21px;
+  z-index: 11;
 }
 
 .dialog-window:opened {
@@ -374,10 +390,14 @@
 .dialog-content {
   display: flex;
   gap: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
 .dialog-icon {
-  inline-size: 89px;
+  overflow: visible;
+  width: 39px;
+  height: 39px;
   fill: var(--button-text-color);
   mix-blend-mode: difference;
 }
@@ -443,7 +463,12 @@
   filter: contrast(150%) saturate(90%) hue-rotate(-0.2turn);
 }
 
-@media (width <= 376px) {
+@media (width <= 400px) {
+
+.content {
+  width: 100%;
+}
+
   .content-text {
     font-size: 19px;
   }
