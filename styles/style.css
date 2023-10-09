@@ -280,11 +280,12 @@
 .card__icon-button {
   background-color: var(--content-bg-color);
   position: relative;
-  inset-block-start: 2px;
+  inset-block-start: 0;
   inset-inline-start: 0;
   border: none;
-  height: 36px;
+  height: 32.5px;
   width: 39px;
+  outline: 2px solid transparent;
 }
 
 .card__icon-button:focus {
@@ -293,7 +294,6 @@
 
 .card__icon-button:focus-visible {
   animation: focus-border 0.3s ease forwards;
-  border: 2px solid transparent;
 }
 
 .button::after {
@@ -329,13 +329,13 @@
   line-height: 90%;
   position: relative;
   z-index: 1;
+  min-width: 118px;
 }
 
 .card__like-button {
   display: flex;
-  gap: 12px;
-  align-items: center;
-  padding: 10px 35px;
+  padding-block: 10px;
+  padding-inline: auto;
 }
 
 .save-block {

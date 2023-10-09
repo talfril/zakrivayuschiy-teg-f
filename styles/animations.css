@@ -55,11 +55,11 @@
 
 @keyframes focus-border {
   from {
-    border: 2px solid transparent;
+    outline: 2px solid transparent;
   }
 
   to {
-    border: 2px solid var(--main-theme-color);
+    outline: 2px solid var(--main-theme-color);
   }
 }
 
