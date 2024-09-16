@@ -1,11 +1,12 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  root: './src',  // Папка, содержащая исходные файлы
+  base: '/zakrivayuschiy-teg-f/',  
+  root: './src',
   build: {
-    outDir: '../dist',  // Папка, куда будет собираться проект
+    outDir: '../dist',
     rollupOptions: {
-      input: './src/index.html',  // Входной файл
+      input: './src/index.html',
     },
   },
 });
