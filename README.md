@@ -1,3 +1,8 @@
 # zakrivayuschiy-teg-f
-Проект "Закрывающий тег"
+Учебный проект "Закрывающий тег"
 git@github.com:talfril/zakrivayuschiy-teg-f.git
+
+
+
+![Скрин проекта, темная тема](image.png)
+![Скрин проекта, светлая тема](image-1.png)
