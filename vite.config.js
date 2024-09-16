@@ -1,14 +1,11 @@
-import { defineConfig } from "vite";
+import { defineConfig } from 'vite';
 
 export default defineConfig({
-  root: "./src",
+  root: './src',  // Папка, содержащая исходные файлы
   build: {
-    outDir: "../dist",
+    outDir: '../dist',  // Папка, куда будет собираться проект
     rollupOptions: {
-      input: "./src/index.html",
+      input: './src/index.html',  // Входной файл
     },
-  },
-  server: {
-    port: 3000, 
   },
 });
